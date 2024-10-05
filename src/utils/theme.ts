@@ -1,5 +1,6 @@
 export function handleThemeChange() {
-  const themeToggle = document.getElementById('themeToggle');
+  // more than one themetoggle (desktop, mobile)
+  const themeToggles = document.querySelectorAll('#themeToggle');
   const htmlElement = document.documentElement;
 
   function setTheme(theme: 'light' | 'dark') {
@@ -17,9 +18,10 @@ export function handleThemeChange() {
     setTheme('dark');
   }
 
-  // Manejar el cambio de tema
-  themeToggle?.addEventListener('click', () => {
-    const currentTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
-    setTheme(currentTheme);
+  themeToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const currentTheme = htmlElement.classList.contains('dark') ? 'light' : 'dark';
+      setTheme(currentTheme);
+    });
   });
 }
