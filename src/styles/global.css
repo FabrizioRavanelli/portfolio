@@ -4,21 +4,22 @@
 
 @layer base {
   :root {
-    --color-primary: #2c3e50;
-    --color-secondary: #34495e;
-    --color-accent: #3498db;
-    --color-background: #ecf0f1;
-    --color-text: #2c3e50;
+    --color-primary: #1E1E1E;       /* Gris oscuro casi negro para mayor sobriedad */
+    --color-secondary: #4F4F4F;     /* Gris medio para detalles sutiles */
+    --color-accent: #0077B6;        /* Azul elegante para acentos */
+    --color-background: #FAFAFA;    /* Blanco suave para menos contraste con la luz */
+    --color-text: #1E1E1E;          /* Gris oscuro para buena legibilidad */
   }
 
   .dark {
-    --color-primary: #3498db;
-    --color-secondary: #2980b9;
-    --color-accent: #e74c3c;
-    --color-background: #2c3e50;
-    --color-text: #ecf0f1;
+    --color-primary: #FAFAFA;       /* Blanco suave en lugar de blanco puro */
+    --color-secondary: #A3A3A3;     /* Gris claro suave para detalles */
+    --color-accent: #00A6FB;        /* Azul brillante para los toques de color */
+    --color-background: #1E1E1E;    /* Gris oscuro en lugar de negro para fondo */
+    --color-text: #FAFAFA;          /* Blanco suave para el texto */
   }
 }
+
 
 html {
   scroll-behavior: smooth;
