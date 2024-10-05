@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Skills from '../components/Skills.astro';
+import InternationalExperience from '../components/InternationalExperience.astro';
+import WhyWorkWithMe from '../components/WhyWorkWithMe.astro';
+import CallToAction from '../components/CallToAction.astro';
+import { t } from "i18next";
+---
+
+<Layout title={t("home.title")}>
+  <main>
+    <Hero />
+    <Services />
+    <Skills />
+    <InternationalExperience />
+    <WhyWorkWithMe />
+    <CallToAction />
+  </main>
+</Layout>

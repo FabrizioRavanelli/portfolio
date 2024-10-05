@@ -1,0 +1,80 @@
+{
+  "home": {
+    "title": "Freelance Portfolio",
+    "welcome": "Welcome to My Freelance Portfolio",
+    "intro": "I'm a passionate freelancer specializing in web development and design. Let's bring your ideas to life!",
+    "learnMore": "Learn More",
+    "services": {
+      "title": "My Services",
+      "item1": "Web Development",
+      "description1": "Custom websites tailored to your needs, from simple landing pages to complex web applications.",
+      "item2": "UI/UX Design",
+      "description2": "User-centered design that enhances user experience and engagement with your digital products.",
+      "item3": "Mobile App Development",
+      "description3": "Native and cross-platform mobile applications that work seamlessly across devices."
+    },
+    "skills": {
+      "title": "My Skills",
+      "primary": "Primary Skills",
+      "additional": "Additional Skills"
+    },
+    "internationalExperience": {
+      "title": "International Experience",
+      "description": "I've had the privilege of working and living in multiple countries, bringing a global perspective to my work.",
+      "spain": "Spain",
+      "germany": "Germany",
+      "france": "France (Current)"
+    },
+    "whyWorkWithMe": {
+      "title": "Why Work With Me?",
+      "reason1": "Expertise",
+      "description1": "Years of experience in delivering high-quality digital solutions.",
+      "reason2": "Efficiency",
+      "description2": "Quick turnaround times without compromising on quality.",
+      "reason3": "Communication",
+      "description3": "Clear and constant communication throughout the project lifecycle."
+    },
+    "cta": {
+      "title": "Let's Work Together",
+      "description": "Have a project in mind? Let's discuss how I can help you achieve your goals.",
+      "button": "Contact Me"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a freelance web developer with over 10 years of experience in creating beautiful and functional websites and applications. My expertise spans across various technologies and industries, allowing me to tackle diverse projects with confidence.",
+    "internationalExperience": "With experience working in Spain and Germany, and currently living in France, I bring a unique international perspective to every project. This global exposure has honed my ability to adapt to different work cultures and communicate effectively across borders.",
+    "experience": {
+      "title": "Work Experience"
+    },
+    "education": {
+      "title": "Education"
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "viewProject": "View Project",
+    "project1": {
+      "title": "E-commerce Platform",
+      "description": "A fully responsive e-commerce platform built with React and Node.js, featuring user authentication and payment integration."
+    },
+    "project2": {
+      "title": "Portfolio Website",
+      "description": "A sleek and modern portfolio website for a professional photographer, built with Astro and TailwindCSS."
+    },
+    "project3": {
+      "title": "Task Management App",
+      "description": "A full-stack task management application with real-time updates, built using Vue.js and Firebase."
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "description": "Interested in working together? Fill out the form below, and I'll get back to you as soon as possible.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  }
+}

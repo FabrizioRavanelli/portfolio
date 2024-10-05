@@ -1,0 +1,72 @@
+{
+  "home": {
+    "title": "Portafolio Freelance",
+    "welcome": "Bienvenido a Mi Portafolio Freelance",
+    "intro": "Soy un freelancer apasionado especializado en desarrollo web y diseño. ¡Hagamos realidad tus ideas!",
+    "learnMore": "Saber Más",
+    "services": {
+      "title": "Mis Servicios",
+      "item1": "Desarrollo Web",
+      "description1": "Sitios web personalizados adaptados a tus necesidades, desde simples landing pages hasta complejas aplicaciones web.",
+      "item2": "Diseño UI/UX",
+      "description2": "Diseño centrado en el usuario que mejora la experiencia y el compromiso con tus productos digitales.",
+      "item3": "Desarrollo de Aplicaciones Móviles",
+      "description3": "Aplicaciones móviles nativas y multiplataforma que funcionan perfectamente en todos los dispositivos."
+    },
+    "whyWorkWithMe": {
+      "title": "¿Por Qué Trabajar Conmigo?",
+      "reason1": "Experiencia",
+      "description1": "Años de experiencia en la entrega de soluciones digitales de alta calidad.",
+      "reason2": "Eficiencia",
+      "description2": "Tiempos de entrega rápidos sin comprometer la calidad.",
+      "reason3": "Comunicación",
+      "description3": "Comunicación clara y constante durante todo el ciclo de vida del proyecto."
+    },
+    "cta": {
+      "title": "Trabajemos Juntos",
+      "description": "¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte a alcanzar tus objetivos.",
+      "button": "Contáctame"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "description": "Soy un desarrollador web freelance con más de 5 años de experiencia en la creación de sitios web y aplicaciones hermosas y funcionales.",
+    "experience": {
+      "title": "Experiencia Laboral",
+      "item1": "Desarrollador Web Senior en TechCorp (2018-2021)",
+      "item2": "Desarrollador Web Freelance (2016-Presente)",
+      "item3": "Desarrollador Junior en StartupX (2015-2016)"
+    },
+    "education": {
+      "title": "Educación",
+      "item1": "Licenciatura en Ciencias de la Computación, Universidad de Tecnología (2015)",
+      "item2": "Bootcamp de Desarrollo Web Full-Stack, CodeAcademy (2016)"
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "viewProject": "Ver Proyecto",
+    "project1": {
+      "title": "Plataforma de Comercio Electrónico",
+      "description": "Una plataforma de comercio electrónico totalmente responsive construida con React y Node.js, con autenticación de usuarios e integración de pagos."
+    },
+    "project2": {
+      "title": "Sitio Web de Portafolio",
+      "description": "Un sitio web de portafolio elegante y moderno para un fotógrafo profesional, construido con Astro y TailwindCSS."
+    },
+    "project3": {
+      "title": "Aplicación de Gestión de Tareas",
+      "description": "Una aplicación de gestión de tareas full-stack con actualizaciones en tiempo real, construida con Vue.js y Firebase."
+    }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "description": "¿Interesado en trabajar juntos? Completa el formulario a continuación y me pondré en contacto contigo lo antes posible.",
+    "form": {
+      "name": "Tu Nombre",
+      "email": "Tu Email",
+      "message": "Tu Mensaje",
+      "submit": "Enviar Mensaje"
+    }
+  }
+}

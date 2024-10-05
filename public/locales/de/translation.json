@@ -1,0 +1,72 @@
+{
+  "home": {
+    "title": "Freiberufliches Portfolio",
+    "welcome": "Willkommen in Meinem Freiberuflichen Portfolio",
+    "intro": "Ich bin ein leidenschaftlicher Freiberufler, spezialisiert auf Webentwicklung und Design. Lassen Sie uns Ihre Ideen zum Leben erwecken!",
+    "learnMore": "Mehr Erfahren",
+    "services": {
+      "title": "Meine Dienstleistungen",
+      "item1": "Webentwicklung",
+      "description1": "Maßgeschneiderte Websites, die auf Ihre Bedürfnisse zugeschnitten sind, von einfachen Landingpages bis hin zu komplexen Webanwendungen.",
+      "item2": "UI/UX Design",
+      "description2": "Benutzerzentriertes Design, das die Benutzererfahrung und das Engagement mit Ihren digitalen Produkten verbessert.",
+      "item3": "Mobile App-Entwicklung",
+      "description3": "Native und plattformübergreifende mobile Anwendungen, die nahtlos auf allen Geräten funktionieren."
+    },
+    "whyWorkWithMe": {
+      "title": "Warum Mit Mir Arbeiten?",
+      "reason1": "Expertise",
+      "description1": "Jahrelange Erfahrung in der Bereitstellung hochwertiger digitaler Lösungen.",
+      "reason2": "Effizienz",
+      "description2": "Schnelle Bearbeitungszeiten ohne Kompromisse bei der Qualität.",
+      "reason3": "Kommunikation",
+      "description3": "Klare und konstante Kommunikation während des gesamten Projektzyklus."
+    },
+    "cta": {
+      "title": "Lassen Sie Uns Zusammenarbeiten",
+      "description": "Haben Sie ein Projekt im Sinn? Lassen Sie uns besprechen, wie ich Ihnen helfen kann, Ihre Ziele zu erreichen.",
+      "button": "Kontaktieren Sie Mich"
+    }
+  },
+  "about": {
+    "title": "Über Mich",
+    "description": "Ich bin ein freiberuflicher Webentwickler mit über 5 Jahren Erfahrung in der Erstellung schöner und funktionaler Websites und Anwendungen.",
+    "experience": {
+      "title": "Berufserfahrung",
+      "item1": "Senior Webentwickler bei TechCorp (2018-2021)",
+      "item2": "Freiberuflicher Webentwickler (2016-Gegenwart)",
+      "item3": "Junior Entwickler bei StartupX (2015-2016)"
+    },
+    "education": {
+      "title": "Ausbildung",
+      "item1": "Bachelor in Informatik, Technische Universität (2015)",
+      "item2": "Full-Stack Webentwicklung Bootcamp, CodeAcademy (2016)"
+    }
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "viewProject": "Projekt Ansehen",
+    "project1": {
+      "title": "E-Commerce-Plattform",
+      "description": "Eine vollständig responsive E-Commerce-Plattform, entwickelt mit React und Node.js, mit Benutzerauthentifizierung und Zahlungsintegration."
+    },
+    "project2": {
+      "title": "Portfolio-Website",
+      "description": "Eine elegante und moderne Portfolio-Website für einen professionellen Fotografen, erstellt mit Astro und TailwindCSS."
+    },
+    "project3": {
+      "title": "Aufgabenverwaltungs-App",
+      "description": "Eine Full-Stack-Aufgabenverwaltungsanwendung mit Echtzeit-Updates, entwickelt mit Vue.js und Firebase."
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie Mich",
+    "description": "Interessiert an einer Zusammenarbeit? Füllen Sie das untenstehende Formular aus, und ich werde mich so schnell wie möglich bei Ihnen melden.",
+    "form": {
+      "name": "Ihr Name",
+      "email": "Ihre E-Mail",
+      "message": "Ihre Nachricht",
+      "submit": "Nachricht Senden"
+    }
+  }
+}
