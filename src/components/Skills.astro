@@ -1,12 +1,11 @@
 ---
 import { t } from "i18next";
-import Image from './Image.astro';
-
 import angularIcon from '../assets/icons/angular.svg';
 import csharpIcon from '../assets/icons/csharp.svg';
 import dotnetIcon from '../assets/icons/dotnet.svg';
 import sqlserverIcon from '../assets/icons/sqlserver.svg';
 import mongodbIcon from '../assets/icons/mongodb.svg';
+import ImageItem from "./ImageItem.astro";
 
 const primarySkills = [
   { name: "Angular", icon: angularIcon },
@@ -24,19 +23,19 @@ const additionalSkills = [
 <section id="skills" class="py-16 bg-background">
   <div class="container mx-auto px-4">
     <h2 class="text-3xl font-bold mb-8 text-center text-primary">{t("home.skills.title")}</h2>
-    
+
     <div class="mb-12">
       <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">{t("home.skills.primary")}</h3>
       <div class="flex flex-wrap justify-center gap-8">
         {primarySkills.map((skill) => (
           <div class="flex flex-col items-center">
-            <Image src={skill.icon} alt={skill.name} width={64} height={64} class="mb-2" />
+            <ImageItem src={skill.icon} alt={skill.name} width={64} height={64} class="mb-2" />
             <span class="text-lg font-semibold">{skill.name}</span>
           </div>
         ))}
       </div>
     </div>
-    
+
     <div>
       <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">{t("home.skills.additional")}</h3>
       <div class="flex flex-wrap justify-center gap-4">

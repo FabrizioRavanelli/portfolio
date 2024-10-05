@@ -2,17 +2,17 @@
 import { t } from "i18next";
 import { Image } from 'astro:assets';
 import profilePhoto from '../assets/profile-photo.jpg';
+import ImageItem from "./ImageItem.astro";
 ---
 
 <section class="min-h-screen pt-16 flex items-center justify-center bg-gradient-to-br from-primary to-accent">
   <div class="text-center text-background">
-    <Image 
-      src={profilePhoto} 
-      alt="Profile Photo" 
-      width={128} 
-      height={128} 
-      class="rounded-full object-cover mx-auto mb-4" 
-      loading="eager"
+    <ImageItem
+      src={profilePhoto}
+      alt="Profile Photo"
+      width={128}
+      height={128}
+      class="rounded-full object-cover mx-auto mb-4"
     />
     <h1 class="text-5xl font-bold mb-4">{t("home.welcome")}</h1>
     <p class="text-xl mb-8">{t("home.intro")}</p>
