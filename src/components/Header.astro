@@ -1,0 +1,106 @@
+---
+import { localizePath } from "astro-i18next";
+import ThemeToggle from './ThemeToggle.astro';
+
+interface NavItem {
+  href: string;
+  label: string;
+}
+
+const languages = ['en', 'es', 'fr', 'de'];
+
+const currentPath = Astro.url.pathname;
+
+const navItems: NavItem[] = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'About' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/contact', label: 'Contact' },
+];
+
+function isActive(href: string) {
+  if (href === '/') {
+    return currentPath === href;
+  }
+  return currentPath.startsWith(href);
+}
+---
+
+<header class="sticky top-0 bg-background z-50 shadow-md">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center">
+        <a href={localizePath("/")} class="text-xl font-bold text-primary mr-2">Logo</a>
+        <span class="text-lg font-semibold text-text hidden md:inline">SIGFRID COUTO FERNANDEZ</span>
+      </div>
+      <div class="md:hidden">
+        <button id="menuToggle" class="text-text hover:text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="mobileMenu" class="fixed inset-0 bg-background bg-opacity-95 z-50 hidden flex-col items-center justify-center">
+        <button id="closeMenu" class="absolute top-4 right-4 text-text hover:text-accent">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        <div class="flex flex-col items-center space-y-4">
+          {navItems.map((item) => (
+            <a
+              href={localizePath(item.href)}
+              class={`text-xl hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
+            >
+              {item.label}
+            </a>
+          ))}
+          <ThemeToggle />
+          <div class="flex space-x-2 mt-4">
+            {languages.map((lang) => (
+              <a href={localizePath("/", lang)} class="text-xl hover:text-accent uppercase">{lang}</a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-4">
+        {navItems.map((item) => (
+          <a
+            href={localizePath(item.href)}
+            class={`hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
+          >
+            {item.label}
+          </a>
+        ))}
+        <ThemeToggle />
+        <div class="flex space-x-2">
+          {languages.map((lang) => (
+            <a href={localizePath("/", lang)} class="hover:text-accent uppercase">{lang}</a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('hidden');
+    mobileMenu.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  });
+
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.add('hidden');
+    mobileMenu.classList.remove('flex');
+    document.body.style.overflow = 'auto';
+  });
+</script>
+
+<style>
+  /* Add any additional styles here */
+</style>
