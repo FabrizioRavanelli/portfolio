@@ -5,20 +5,37 @@ import profilePhoto from '../assets/profile-photo.jpg';
 import ImageItem from "./ImageItem.astro";
 ---
 
-<section class="min-h-screen pt-16 flex items-center justify-center bg-gradient-to-br from-primary to-accent">
-  <div class="text-center text-background">
-    <ImageItem
-      src={profilePhoto}
-      alt="Profile Photo"
-      width={128}
-      height={128}
-      class="rounded-full object-cover mx-auto mb-4"
-      loadingStrategy="eager"
-    />
-    <h1 class="text-5xl font-bold mb-4">{t("home.welcome")}</h1>
-    <p class="text-xl mb-8">{t("home.intro")}</p>
-    <a href="#services" class="bg-background text-primary font-bold py-2 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+
+<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-accent p-4">
+  <div class="max-w-4xl w-full text-center text-background">
+    <div class="mb-8">
+      <ImageItem
+        src={profilePhoto}
+        alt="Profile Photo"
+        width={200}
+        height={200}
+        class="rounded-full object-cover mx-auto shadow-lg border-4 border-background"
+        loadingStrategy="eager"
+      />
+    </div>
+    <h1 class="text-4xl md:text-6xl font-bold mb-6">{t("home.welcome")}</h1>
+    <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">{t("home.intro")}</p>
+    <a
+      href="#services"
+      class="bg-background text-primary font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition duration-300 text-lg inline-block"
+    >
       {t("home.learnMore")}
     </a>
   </div>
 </section>
+
+<style>
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      font-size: 1.125rem;
+    }
+  }
+</style>
