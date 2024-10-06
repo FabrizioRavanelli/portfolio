@@ -1,50 +1,154 @@
 ---
-import { t } from "i18next";
-import angularIcon from '../assets/icons/angular.svg';
-import csharpIcon from '../assets/icons/csharp.svg';
-import dotnetIcon from '../assets/icons/dotnet.svg';
-import sqlserverIcon from '../assets/icons/sqlserver.svg';
-import mongodbIcon from '../assets/icons/mongodb.svg';
-import ImageItem from "./ImageItem.astro";
+import * as SimpleIcons from 'simple-icons';
 
 const primarySkills = [
-  { name: "Angular", icon: angularIcon },
-  { name: "C#", icon: csharpIcon },
-  { name: ".NET", icon: dotnetIcon },
-  { name: "SQL Server", icon: sqlserverIcon },
-  { name: "MongoDB", icon: mongodbIcon },
+  { name: "Angular", icon: SimpleIcons.siAngular, color: "#DD0031" },
+  { name: "C#", icon: SimpleIcons.siCsharp, color: "#239120" },
+  { name: ".NET", icon: SimpleIcons.siDotnet, color: "#512BD4" },
+  { name: "SQL Server", icon: SimpleIcons.siMicrosoftsqlserver, color: "#CC2927" },
+  { name: "MongoDB", icon: SimpleIcons.siMongodb, color: "#47A248" },
 ];
 
 const additionalSkills = [
-  "HTML5", "CSS3", "JavaScript", "TypeScript", "Git", "Agile", "RESTful APIs", "Docker"
+  { name: "HTML5", icon: SimpleIcons.siHtml5, color: "#E34F26" },
+  { name: "CSS3", icon: SimpleIcons.siCss3, color: "#1572B6" },
+  { name: "JavaScript", icon: SimpleIcons.siJavascript, color: "#F7DF1E" },
+  { name: "TypeScript", icon: SimpleIcons.siTypescript, color: "#3178C6" },
+  { name: "Git", icon: SimpleIcons.siGit, color: "#F05032" },
+  // { name: "Agile", icon: SimpleIcons.siAgile, color: "#0052CC" },
+  // { name: "RESTful APIs", icon: SimpleIcons.siOpenapi, color: "#000000" },
+  { name: "Docker", icon: SimpleIcons.siDocker, color: "#2496ED" }
 ];
 ---
 
-<section id="skills" class="py-16 bg-background">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold mb-8 text-center text-primary">{t("home.skills.title")}</h2>
+<section id="skills" class="tech-stack">
+  <div class="container">
+    <h2>Tech Stack</h2>
 
-    <div class="mb-12">
-      <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">{t("home.skills.primary")}</h3>
-      <div class="flex flex-wrap justify-center gap-8">
+    <div class="primary-skills">
+      <h3>Primary Skills</h3>
+      <div class="tech-grid">
         {primarySkills.map((skill) => (
-          <div class="flex flex-col items-center">
-            <ImageItem src={skill.icon} alt={skill.name} width={64} height={64} class="mb-2" loadingStrategy='lazy' />
-            <span class="text-lg font-semibold">{skill.name}</span>
+          <div class="tech-item">
+            <div class="tech-icon" style={`color: ${skill.color};`}>
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="currentColor">
+                <path d={skill.icon.path} />
+              </svg>
+            </div>
+            <h4>{skill.name}</h4>
           </div>
         ))}
       </div>
     </div>
 
-    <div>
-      <h3 class="text-2xl font-semibold mb-6 text-center text-secondary">{t("home.skills.additional")}</h3>
-      <div class="flex flex-wrap justify-center gap-4">
+    <div class="additional-skills">
+      <h3>Additional Skills</h3>
+      <div class="skill-tags">
         {additionalSkills.map((skill) => (
-          <span class="bg-secondary bg-opacity-10 text-primary px-4 py-2 rounded-full text-sm font-medium">
-            {skill}
+          <span class="skill-tag" style={`background-color: ${skill.color};`}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d={skill.icon.path} />
+            </svg>
+            {skill.name}
           </span>
         ))}
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .tech-stack {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    padding: 4rem 2rem;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--color-accent);
+  }
+
+  h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--color-secondary);
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+  }
+
+  .tech-item {
+    text-align: center;
+  }
+
+  .tech-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+  }
+
+  .additional-skills {
+    margin-top: 3rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .tech-grid {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .tech-icon {
+      width: 60px;
+      height: 60px;
+    }
+
+    h4 {
+      font-size: 1rem;
+    }
+  }
+</style>

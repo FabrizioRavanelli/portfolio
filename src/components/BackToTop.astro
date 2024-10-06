@@ -3,7 +3,34 @@
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
   </svg>
 </button>
+<style>
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--color-accent);
+  color: var(--color-background);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
 
+.back-to-top.visible {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary);
+}
+</style>
 <script>
   const backToTopButton = document.getElementById('backToTop');
 
