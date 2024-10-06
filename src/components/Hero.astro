@@ -13,6 +13,7 @@ import ImageItem from "./ImageItem.astro";
       width={128}
       height={128}
       class="rounded-full object-cover mx-auto mb-4"
+      loadingStrategy="eager"
     />
     <h1 class="text-5xl font-bold mb-4">{t("home.welcome")}</h1>
     <p class="text-xl mb-8">{t("home.intro")}</p>

@@ -7,12 +7,13 @@ interface Props {
   width: number;
   height: number;
   class?: string;
+  loadingStrategy: 'lazy'|'eager';
 }
 
-const { src, alt, width, height, class: className } = Astro.props;
+const { src, alt, width, height, class: className, loadingStrategy } = Astro.props;
 
 // Remove redundant words from alt text
 const cleanAlt = alt.replace(/\b(image|photo|picture|icon|logo)\b/gi, '').trim();
 ---
 
-<Image {src} alt={cleanAlt} {width} {height} class={className} loading="eager" />
+<Image {src} alt={cleanAlt} {width} {height} class={className} loading={loadingStrategy} />

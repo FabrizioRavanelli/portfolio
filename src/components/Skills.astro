@@ -29,7 +29,7 @@ const additionalSkills = [
       <div class="flex flex-wrap justify-center gap-8">
         {primarySkills.map((skill) => (
           <div class="flex flex-col items-center">
-            <ImageItem src={skill.icon} alt={skill.name} width={64} height={64} class="mb-2" />
+            <ImageItem src={skill.icon} alt={skill.name} width={64} height={64} class="mb-2" loadingStrategy='lazy' />
             <span class="text-lg font-semibold">{skill.name}</span>
           </div>
         ))}

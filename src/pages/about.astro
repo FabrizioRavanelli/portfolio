@@ -6,6 +6,7 @@ import { t } from "i18next";
 import netgoLogo from '../assets/company-logos/netgo_gmbh_logo.jpeg';
 import gvlLogo from '../assets/company-logos/gvl_logo.jpeg';
 import uniLogo from '../assets/company-logos/university.jpeg';
+import AnimatedContent from '../components/AnimatedContent.astro';
 
 const experiences = [
   {
@@ -53,21 +54,23 @@ const educations = [
 ---
 
 <Layout title={t("about.title")}>
-  <main class="container mx-auto px-4 py-8">
-    <h1 class="text-4xl font-bold mb-6 text-primary">{t("about.title")}</h1>
-    <div class="bg-secondary bg-opacity-10 p-6 rounded-lg mb-8">
-      <p class="text-xl mb-4">{t("about.description")}</p>
-      <p class="text-xl mb-4 font-semibold text-accent">{t("about.internationalExperience")}</p>
-    </div>
+  <AnimatedContent>
+    <main class="container mx-auto px-4 py-8">
+      <h1 class="text-4xl font-bold mb-6 text-primary">{t("about.title")}</h1>
+      <div class="bg-secondary bg-opacity-10 p-6 rounded-lg mb-8">
+        <p class="text-xl mb-4">{t("about.description")}</p>
+        <p class="text-xl mb-4 font-semibold text-accent">{t("about.internationalExperience")}</p>
+      </div>
 
-    <h2 class="text-3xl font-semibold mb-6 text-primary">{t("about.experience.title")}</h2>
-    {experiences.map((exp) => (
-      <ExperienceItem {...exp} />
-    ))}
+      <h2 class="text-3xl font-semibold mb-6 text-primary">{t("about.experience.title")}</h2>
+      {experiences.map((exp) => (
+        <ExperienceItem {...exp} />
+      ))}
 
-    <h2 class="text-3xl font-semibold mb-6 text-primary">{t("about.education.title")}</h2>
-    {educations.map((edu) => (
-      <ExperienceItem {...edu} />
-    ))}
-  </main>
+      <h2 class="text-3xl font-semibold mb-6 text-primary">{t("about.education.title")}</h2>
+      {educations.map((edu) => (
+        <ExperienceItem {...edu} />
+      ))}
+    </main>
+  </AnimatedContent>
 </Layout>
