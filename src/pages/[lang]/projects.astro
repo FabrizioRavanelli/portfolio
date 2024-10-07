@@ -4,16 +4,9 @@ import Layout from '../../layouts/Layout.astro';
 // import { t } from "i18next";
 
 import {getLangFromUrl, useTranslations} from '../../i18n/ui';
+import { getStaticPaths } from '../../i18n/ui';
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
+export { getStaticPaths };
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

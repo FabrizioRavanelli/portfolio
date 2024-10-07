@@ -2,17 +2,9 @@
 import AnimatedContent from '../../components/AnimatedContent.astro';
 import {getLangFromUrl, useTranslations} from '../../i18n/ui';
 import Layout from '../../layouts/Layout.astro';
+import { getStaticPaths } from '../../i18n/ui';
 
-
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-		{ params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
+export { getStaticPaths };
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

@@ -1,6 +1,5 @@
 ---
-// import { t } from "i18next";
-import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+import {ui, useTranslations} from '../i18n/ui';
 import profilePhoto from '../assets/profile-photo.jpg';
 import ImageItem from "./ImageItem.astro";
 
@@ -10,15 +9,6 @@ interface Props {
 
 const { lang } = Astro.props;
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
 const t = useTranslations(lang);
 ---
 

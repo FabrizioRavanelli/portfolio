@@ -8,15 +8,6 @@ interface Props {
 
 const { lang } = Astro.props;
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
 const t = useTranslations(lang);
 ---
 

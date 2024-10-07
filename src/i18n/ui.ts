@@ -36,10 +36,19 @@ export function useTranslations(lang: keyof typeof ui) {
 }
 
 export function localizePath(path: string, lang: keyof typeof ui) {
-  console.log('output', path, lang)
   const [, ...rest] = path.split('/');
   if (rest[0] in languages) {
     rest.shift();
   }
   return `/${lang}/${rest.join('/')}`.replace(/\/$/, '');
+}
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'cat' } },
+  ];
 }

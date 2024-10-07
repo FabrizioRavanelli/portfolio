@@ -13,16 +13,7 @@ const services = [
   { title: "home.services.item2", description: "home.services.description2" },
   { title: "home.services.item3", description: "home.services.description3" },
 ];
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
-// const lang = getLangFromUrl(Astro.url);
+
 const t = useTranslations(lang);
 ---
 
