@@ -9,6 +9,8 @@
     --color-accent: #0077B6;        /* Azul elegante para acentos */
     --color-background: #FAFAFA;    /* Blanco suave para menos contraste con la luz */
     --color-text: #1E1E1E;          /* Gris oscuro para buena legibilidad */
+
+    --header-height: 0px;
   }
 
   .dark {

@@ -1,9 +1,9 @@
 ---
-import AnimatedContent from '../components/AnimatedContent.astro';
-import Layout from '../layouts/Layout.astro';
+import AnimatedContent from '../../components/AnimatedContent.astro';
+import Layout from '../../layouts/Layout.astro';
 // import { t } from "i18next";
 
-import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+import {getLangFromUrl, useTranslations} from '../../i18n/ui';
 
 export function getStaticPaths() {
   return [
@@ -14,12 +14,8 @@ export function getStaticPaths() {
     { params: { lang: 'cat' } },
   ];
 }
-interface Props {
-  lang: keyof typeof ui;
-}
 
-const { lang } = Astro.props;
-
+const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 

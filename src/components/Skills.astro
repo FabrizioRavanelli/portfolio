@@ -1,5 +1,12 @@
 ---
 import * as SimpleIcons from 'simple-icons';
+import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
 
 const primarySkills = [
   { name: "Angular", icon: SimpleIcons.siAngular, color: "#DD0031" },

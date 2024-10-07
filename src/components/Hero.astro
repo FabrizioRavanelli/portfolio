@@ -1,12 +1,30 @@
 ---
-import { t } from "i18next";
-import { Image } from 'astro:assets';
+// import { t } from "i18next";
+import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
 import profilePhoto from '../assets/profile-photo.jpg';
 import ImageItem from "./ImageItem.astro";
+
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'cat' } },
+  ];
+}
+const t = useTranslations(lang);
 ---
 
 
-<section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary to-accent p-4">
+<section class="flex items-center justify-center bg-gradient-to-br from-primary to-accent p-4"
+  style="min-height: calc(100vh - var(--header-height, 0px));">
   <div class="max-w-4xl w-full text-center text-background">
     <div class="mb-8">
       <ImageItem

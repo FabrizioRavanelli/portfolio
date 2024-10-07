@@ -1,11 +1,29 @@
 ---
-import { t } from "i18next";
+// import { t } from "i18next";
+import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
 
 const services = [
   { title: "home.services.item1", description: "home.services.description1" },
   { title: "home.services.item2", description: "home.services.description2" },
   { title: "home.services.item3", description: "home.services.description3" },
 ];
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'cat' } },
+  ];
+}
+// const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section id="services" class="py-16 bg-background">

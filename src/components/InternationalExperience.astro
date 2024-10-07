@@ -1,5 +1,23 @@
 ---
-import { t } from "i18next";
+// import { t } from "i18next";
+import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
+
+export function getStaticPaths() {
+  return [
+    { params: { lang: 'en' } },
+    { params: { lang: 'es' } },
+    { params: { lang: 'fr' } },
+    { params: { lang: 'de' } },
+    { params: { lang: 'cat' } },
+  ];
+}
+const t = useTranslations(lang);
 ---
 
 <section class="py-8 sm:py-12 md:py-16 bg-gradient-to-r from-primary to-accent text-background">

@@ -1,5 +1,6 @@
 ---
-import { localizePath } from "astro-i18next";
+// import { localizePath } from "astro-i18next";
+import {localizePath, ui} from '../i18n/ui';
 import ThemeToggle from './ThemeToggle.astro';
 
 interface NavItem {
@@ -7,10 +8,17 @@ interface NavItem {
   label: string;
 }
 
-const languages = ['en', 'es', 'fr', 'de', 'cat'];
+interface Props {
+  lang: keyof typeof ui;
+}
+
+const { lang } = Astro.props;
+
+
+const languages = ['en', 'es', 'fr', 'de', 'cat'] as (keyof typeof ui)[];
 
 const currentPath = Astro.url.pathname;
-
+console.log('#'+currentPath+'#');
 const navItems: NavItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
@@ -26,11 +34,11 @@ function isActive(href: string) {
 }
 ---
 
-<header class="sticky top-0 bg-background z-50 shadow-md">
+<header id="site-header" class="sticky top-0 bg-background z-50 shadow-md">
   <nav class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <div class="flex items-center">
-        <a href={localizePath("/")} class="text-xl font-bold text-primary mr-2">Logo</a>
+        <a href={localizePath("/", lang)} class="text-xl font-bold text-primary mr-2">Logo</a>
         <span class="text-lg font-semibold text-text hidden md:inline">SIGFRID COUTO FERNANDEZ</span>
       </div>
       <div class="md:hidden">
@@ -49,7 +57,7 @@ function isActive(href: string) {
         <div class="flex flex-col items-center space-y-4">
           {navItems.map((item) => (
             <a
-              href={localizePath(item.href)}
+              href={localizePath(item.href, lang)}
               class={`text-xl hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
             >
               {item.label}
@@ -57,8 +65,8 @@ function isActive(href: string) {
           ))}
           <ThemeToggle />
           <div class="flex space-x-2 mt-4">
-            {languages.map((lang) => (
-              <a href={localizePath("/", lang)} class="text-xl hover:text-accent uppercase">{lang}</a>
+            {languages.map((language) => (
+              <a href={localizePath("/", language)} class="text-xl hover:text-accent uppercase">{language}</a>
             ))}
           </div>
         </div>
@@ -66,7 +74,7 @@ function isActive(href: string) {
       <div class="hidden md:flex items-center space-x-4">
         {navItems.map((item) => (
           <a
-            href={localizePath(item.href)}
+            href={localizePath(item.href, lang)}
             class={`hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
           >
             {item.label}
@@ -74,8 +82,8 @@ function isActive(href: string) {
         ))}
         <ThemeToggle />
         <div class="flex space-x-2">
-          {languages.map((lang) => (
-            <a href={localizePath("/", lang)} class="hover:text-accent uppercase">{lang}</a>
+          {languages.map((language) => (
+            <a href={localizePath("/", language)} class="hover:text-accent uppercase">{language}</a>
           ))}
         </div>
       </div>
@@ -99,6 +107,20 @@ function isActive(href: string) {
     mobileMenu.classList.remove('flex');
     document.body.style.overflow = 'auto';
   });
+
+  function updateHeaderHeight() {
+    const header = document.getElementById('site-header');
+    if (header) {
+      const height = header.offsetHeight;
+      document.documentElement.style.setProperty('--header-height', `${height}px`);
+    }
+  }
+
+  // Initial update
+  updateHeaderHeight();
+
+  // Update on window resize
+  window.addEventListener('resize', updateHeaderHeight);
 </script>
 
 <style>

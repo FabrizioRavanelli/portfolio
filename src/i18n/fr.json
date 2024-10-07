@@ -1,0 +1,32 @@
+{
+  "site": {
+    "title": "Welcome to Astro",
+    "description": "Explore our multilingual Astro site!"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About"
+  },
+  "home": {
+    "title": "Welcome to Astro",
+    "description": "Explore our multilingual Astro site!",
+    "cards": [
+      {
+        "title": "Documentation",
+        "body": "Learn how Astro works and explore the official API docs."
+      },
+      {
+        "title": "Integrations",
+        "body": "Supercharge your project with new frameworks and libraries."
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "description": "Learn more about our multilingual Astro project.",
+    "text": "This is an example of a multilingual Astro site with three languages: English, Spanish, and French. It demonstrates how to create a language switcher and manage content in different languages."
+  },
+  "footer": {
+    "text": "Created with Astro"
+  }
+}
