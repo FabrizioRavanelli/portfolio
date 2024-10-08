@@ -5,6 +5,7 @@ import '../styles/global.css';
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import type {ui} from "../i18n/ui";
+import HeadHrefLangs from '../components/HeadHrefLangs.astro';
 
 interface Props {
   title: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const { title, lang } = Astro.props;
+const currentPath = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -22,15 +24,15 @@ const { title, lang } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- <HeadHrefLangs /> -->
+		<HeadHrefLangs currentLang={lang} currentPath={currentPath} />
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-background text-text font-poppins">
+	<body class="bg-background text-text font-poppins flex flex-col min-h-screen">
 		<Header lang={lang} />
-		<main class="page-content">
+		<main class="page-content flex-grow">
 			<slot />
 		</main>
 		<Footer lang={lang} />
@@ -44,13 +46,13 @@ const { title, lang } = Astro.props;
 		handleThemeChange();
 
 		// Smooth scroll for internal links
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
-				});
-			});
-		});
+		// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		// 	anchor.addEventListener('click', function (e) {
+		// 		e.preventDefault();
+		// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
+		// 			behavior: 'smooth'
+		// 		});
+		// 	});
+		// });
 	});
 </script>

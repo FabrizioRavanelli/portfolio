@@ -1,6 +1,6 @@
 ---
 const year = new Date().getFullYear();
-import {getLangFromUrl, ui, useTranslations} from '../i18n/ui';
+import {localizePath, ui, useTranslations} from '../i18n/ui';
 
 interface Props {
   lang: keyof typeof ui;
@@ -9,10 +9,10 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
-<footer class="p-4 text-center text-text">
+<footer class="p-4 text-center text-text mx-auto mt-auto">
   <p>&copy; {year} Freelance Portfolio. All rights reserved.</p>
   <div class="mt-2">
-    <a href="/legal" class="text-accent hover:underline underline-offset-8 mr-4">Legal Notice</a>
+    <a href={localizePath("/legal", lang)} class="text-accent hover:underline underline-offset-8 mr-4">Legal Notice</a>
     <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">LinkedIn</a>
   </div>
 </footer>

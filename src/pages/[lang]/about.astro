@@ -5,7 +5,7 @@ import netgoLogo from '../../assets/company-logos/netgo_gmbh_logo.jpeg';
 import gvlLogo from '../../assets/company-logos/gvl_logo.jpeg';
 import uniLogo from '../../assets/company-logos/university.jpeg';
 import AnimatedContent from '../../components/AnimatedContent.astro';
-import {getLangFromUrl, useTranslations} from '../../i18n/ui';
+import {getStaticPaths, getLangFromUrl, useTranslations} from '../../i18n/ui';
 
 const experiences = [
   {
@@ -51,15 +51,7 @@ const educations = [
   }
 ];
 
-export function getStaticPaths() {
-  return [
-    { params: { lang: 'en' } },
-    { params: { lang: 'es' } },
-    { params: { lang: 'fr' } },
-    { params: { lang: 'de' } },
-    { params: { lang: 'cat' } },
-  ];
-}
+export { getStaticPaths };
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

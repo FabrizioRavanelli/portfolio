@@ -1,0 +1,25 @@
+---
+import {languages} from "../i18n/ui";
+const {currentPath} = Astro.props;
+
+// Function to get the correct path for each language
+function getPath(lang: string) {
+  if (lang === 'en') {
+    return currentPath === '/' ? '/' : currentPath.replace(/^\/[^/]+/, '');
+  }
+  return `/${lang}${currentPath === '/' ? '' : currentPath.replace(/^\/[^/]+/, '')}`;
+}
+---
+
+{Object.keys(languages).map((lang) => (
+  <link
+    rel="alternate"
+    hreflang={lang}
+    href={new URL(getPath(lang), Astro.site).href}
+  />
+))}
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href={new URL(getPath('en'), Astro.site).href}
+/>

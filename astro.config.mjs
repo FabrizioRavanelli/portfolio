@@ -4,6 +4,7 @@ import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 
 export default defineConfig({
+  site: 'https://example.com',
   integrations: [
     tailwind(),
     // astroI18next(),

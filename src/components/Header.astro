@@ -18,7 +18,6 @@ const { lang } = Astro.props;
 const languages = ['en', 'es', 'fr', 'de', 'cat'] as (keyof typeof ui)[];
 
 const currentPath = Astro.url.pathname;
-console.log('#'+currentPath+'#');
 const navItems: NavItem[] = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
