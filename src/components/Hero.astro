@@ -13,8 +13,9 @@ const t = useTranslations(lang);
 ---
 
 
-<section class="flex items-center justify-center bg-gradient-to-br from-primary to-accent p-4"
+<section class="hero flex items-center justify-center bg-gradient-to-br from-primary to-accent p-4"
   style="min-height: calc(100vh - var(--header-height, 0px));">
+  <canvas id="particleCanvas" class="absolute inset-0"></canvas>
   <div class="max-w-4xl w-full text-center text-background">
     <div class="mb-8">
       <ImageItem
@@ -36,7 +37,6 @@ const t = useTranslations(lang);
     </a>
   </div>
 </section>
-
 <style>
   @media (max-width: 640px) {
     h1 {
@@ -44,6 +44,26 @@ const t = useTranslations(lang);
     }
     p {
       font-size: 1.125rem;
+    }
+  }
+  /* .hero {
+    background: linear-gradient(45deg, #1a202c, #2d3748);
+  } */
+  .hero {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
 </style>

@@ -36,16 +36,11 @@ const currentPath = Astro.url.pathname;
 		</main>
 		<Footer lang={lang} />
 		<BackToTop  lang={lang} />
+		<script src="../scripts/main.js"></script>
 	</body>
 </html>
 <script>
 	import { handleThemeChange } from '../utils/theme';
-	import Swup from 'swup';
-	import SwupFadeTheme from '@swup/fade-theme';
-
-	const swup = new Swup({
-		plugins: [new SwupFadeTheme()]
-	});
 
 	document.addEventListener('DOMContentLoaded', () => {
 		handleThemeChange();
