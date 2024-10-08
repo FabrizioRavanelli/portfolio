@@ -31,7 +31,7 @@ const currentPath = Astro.url.pathname;
 	</head>
 	<body class="bg-background text-text font-poppins flex flex-col min-h-screen">
 		<Header lang={lang} />
-		<main class="page-content flex-grow">
+		<main id="swup" class="page-content flex-grow">
 			<slot />
 		</main>
 		<Footer lang={lang} />
@@ -40,18 +40,14 @@ const currentPath = Astro.url.pathname;
 </html>
 <script>
 	import { handleThemeChange } from '../utils/theme';
+	import Swup from 'swup';
+	import SwupFadeTheme from '@swup/fade-theme';
+
+	const swup = new Swup({
+		plugins: [new SwupFadeTheme()]
+	});
 
 	document.addEventListener('DOMContentLoaded', () => {
 		handleThemeChange();
-
-		// Smooth scroll for internal links
-		// document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		// 	anchor.addEventListener('click', function (e) {
-		// 		e.preventDefault();
-		// 		document.querySelector(this.getAttribute('href')).scrollIntoView({
-		// 			behavior: 'smooth'
-		// 		});
-		// 	});
-		// });
 	});
 </script>

@@ -35,15 +35,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-.page-content {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.page-content.fade-out {
-  opacity: 0;
-}
-
 /* Scrollbar styles */
 ::-webkit-scrollbar {
   width: 8px;

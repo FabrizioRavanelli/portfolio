@@ -6,7 +6,6 @@ import Skills from '../../components/Skills.astro';
 import InternationalExperience from '../../components/InternationalExperience.astro';
 import WhyWorkWithMe from '../../components/WhyWorkWithMe.astro';
 import CallToAction from '../../components/CallToAction.astro';
-import AnimatedContent from '../../components/AnimatedContent.astro';
 import {getLangFromUrl, useTranslations} from '../../i18n/ui';
 import {getStaticPaths} from '../../i18n/ui';
 
@@ -17,12 +16,10 @@ const t = useTranslations(lang);
 ---
 
 <Layout title={t("home.title")} lang={lang}>
-  <AnimatedContent>
-    <Hero lang={lang} />
-    <Services lang={lang} />
-    <Skills lang={lang} />
-    <InternationalExperience lang={lang} />
-    <WhyWorkWithMe lang={lang} />
-    <CallToAction lang={lang} />
-  </AnimatedContent>
+  <Hero lang={lang} />
+  <Services lang={lang} />
+  <Skills lang={lang} />
+  <InternationalExperience lang={lang} />
+  <WhyWorkWithMe lang={lang} />
+  <CallToAction lang={lang} />
 </Layout>
