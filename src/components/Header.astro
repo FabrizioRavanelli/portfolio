@@ -25,15 +25,12 @@ const navItems: NavItem[] = [
 ];
 
 function isActive(href: string) {
-  if (href === '/') {
-    return currentPath === href;
-  }
-  return currentPath.startsWith(href);
+  return currentPath === localizePath(href, lang) || currentPath === localizePath(href, lang) + '/';
 }
 ---
 
 <header id="site-header" class="sticky top-0 bg-background z-50 shadow-md">
-  <nav class="container mx-auto px-4 py-4">
+  <nav id="nav" class="container mx-auto px-4 py-4">
     <div class="flex justify-between items-center">
       <div class="flex items-center">
         <a href={localizePath("/", lang)} class="text-xl font-bold text-primary mr-2">Logo</a>
@@ -56,7 +53,7 @@ function isActive(href: string) {
           {navItems.map((item) => (
             <a
               href={localizePath(item.href, lang)}
-              class={`text-xl hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
+              class={`text-xl hover:text-accent ${isActive(item.href) ? 'active text-accent font-bold underline underline-offset-8' : ''}`}
             >
               {item.label}
             </a>
@@ -73,7 +70,7 @@ function isActive(href: string) {
         {navItems.map((item) => (
           <a
             href={localizePath(item.href, lang)}
-            class={`hover:text-accent ${isActive(item.href) ? 'text-accent font-bold underline underline-offset-8' : ''}`}
+            class={`hover:text-accent ${isActive(item.href) ? 'active text-accent font-bold underline underline-offset-8' : ''}`}
           >
             {item.label}
           </a>
@@ -90,9 +87,15 @@ function isActive(href: string) {
 </header>
 
 <script>
-  const menuToggle = document.getElementById('menuToggle');
+import {handleThemeChange} from "../utils/theme";
+
+  // This script will run on every page navigation
+  document.addEventListener('astro:page-load', () => {
+    console.log('Page loaded');
+    const menuToggle = document.getElementById('menuToggle');
   const closeMenu = document.getElementById('closeMenu');
   const mobileMenu = document.getElementById('mobileMenu');
+  const nav = document.getElementById('nav');
 
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.remove('hidden');
@@ -105,6 +108,14 @@ function isActive(href: string) {
     mobileMenu.classList.remove('flex');
     document.body.style.overflow = 'auto';
   });
+
+  function handleNavigation(event) {
+    const link = event.target.closest('a');
+    if (link && link.classList.contains('active')) {
+      event.preventDefault();
+    }
+  }
+  nav.addEventListener('click', handleNavigation);
 
   function updateHeaderHeight() {
     const header = document.getElementById('site-header');
@@ -119,8 +130,7 @@ function isActive(href: string) {
 
   // Update on window resize
   window.addEventListener('resize', updateHeaderHeight);
-</script>
 
-<style>
-  /* Add any additional styles here */
-</style>
+  handleThemeChange();
+  });
+</script>
